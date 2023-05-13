@@ -1,1 +1,45 @@
 # aakashskumar.github.io
+<html>
+<head>
+	<title>Aakash - A Fancy Website for texting</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+	<header>
+		<h1>Aakash</h1>
+		<nav>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<section class="hero">
+			<h2>Welcome to Aakash</h2>
+			<p>only for close persons</p>
+		</section>
+		<section class="about">
+			<h2>About Aakash</h2>
+			<p>Aakash is a website designed to showcase the latest trends and technologies in web design and development. Our mission is to provide a platform for creative expression and inspiration for everyone.</p>
+		</section>
+		<section class="contact">
+			<h2>Contact Aakash</h2>
+			<p>Feel free to send us a message with any feedback, questions, or concerns you may have. We would love to hear from you!</p>
+			<form action="send_message.php" method="POST">
+				<label for="name">Name:</label>
+				<input type="text" id="name" name="name" required>
+				<label for="email">Email:</label>
+				<input type="email" id="email" name="email" required>
+				<label for="message">Message:</label>
+				<textarea id="message" name="message" required></textarea>
+				<input type="submit" value="Send Message">
+			</form>
+		</section>
+	</main>
+	<footer>
+		<p>&copy; 2023 Aakash. All rights reserved.</p>
+	</footer>
+</body>
+</html>
