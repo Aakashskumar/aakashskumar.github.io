@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+</head>
+	<h1>Message Board</h1>
+	<form id="message-form">
+		<label for="name">Name:</label>
+		<input type="text" id="name" name="name"><br><br>
+		<label for="message">Message:</label><br>
+		<textarea id="message" name="message" rows="5" cols="50"></textarea><br><br>
+		<input type="submit" value="Post">
+	</form>
+	<hr>
+	<section id="messages">
+		<!-- Display messages here -->
+	</section>
+	<script>
+		// Get the form and messages section
+		const form = document.getElementById('message-form');
+		const messagesSection = document.getElementById('messages');
+
+		// Add event listener for form submission
+		form.addEventListener('submit', (event) => {
+			event.preventDefault(); // Prevent form from submitting and refreshing the page
+			const name = form.name.value;
+			const message = form.message.value;
+			const messageElement = document.createElement('article');
+			messageElement.innerHTML = `
+				<h2>${name}</h2>
+				<p>${message}</p>
+			`;
+			messagesSection.appendChild(messageElement);
+			form.reset();
+		});
+	</script>
+<head>
+	<title>My Social Network</title>
+	<style>
+		body {
+			background-image: url('background.jpg');
+			background-size: cover;
+			background-position: center;
+			font-family: Arial, sans-serif;
+		}
+		.watermark {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.watermark::before {
+			content: 'Aakash';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			font-size: 100px;
+			font-weight: bold;
+			color: #a51616;
+			opacity: 0.5;
+			text-shadow: 2px 2px 4px #000;
+		}
+	</style>
+
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header>
+		<div class="logo">My Social Network</div>
+		<nav>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Profile</a></li>
+				<li><a href="#">Friends</a></li>
+				<li><a href="#">Messages</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<div class="sidebar">
+			<h2>News Feed</h2>
+			<ul>
+				<!-- Display recent posts here -->
+			</ul>
+		</div>
+		<div class="content">
+			<h2>New Post</h2>
+			<form>
+				<label for="name">Name:</label>
+				<input type="text" id="name" name="name"><br><br>
+				<label for="post">Post:</label><br>
+				<textarea id="post" name="post" rows="5" cols="50"></textarea><br><br>
+				<input type="submit" value="Post">
+			</form>
+		</div>
+	</main>
+	<footer>
+		<p>&copy; 2023 My Social Network</p>
+	</footer>
+</body>
+</html>
